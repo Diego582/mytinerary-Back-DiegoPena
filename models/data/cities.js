@@ -163,12 +163,6 @@ const cities = [
   },
 ];
 
-/* connect(process.env.LINK_DB)
-  .then(() => {
-    City.insertMany(cities);
-    console.log("done! ");
-  })
-  .catch((err) => console.log(err)); */
 
 async function createCities(arrayCities) {
   try {
