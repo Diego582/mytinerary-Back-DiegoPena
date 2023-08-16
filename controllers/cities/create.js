@@ -1,7 +1,7 @@
 import City from "../../models/City.js";
 import User from "../../models/User.js";
 
-export default async (req, res) => {
+export default async (req, res, next) => {
   let newCity = req.body;
   try {
     let user = await User.findOne({ mail: newCity.admin_id });
@@ -15,11 +15,6 @@ export default async (req, res) => {
       response: newCity._id,
     });
   } catch (error) {
-    console.log(error);
-    return res.status(400).json({
-      success: false,
-      message: "not created",
-      response: null,
-    });
+    next(error);
   }
 };
