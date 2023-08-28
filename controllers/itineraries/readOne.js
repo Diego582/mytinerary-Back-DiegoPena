@@ -2,7 +2,9 @@ import Itinerary from "../../models/Itinerary.js";
 
 export default async (req, res, next) => {
   try {
-    let oneItinerary = await Itinerary.findOne({ _id: req.params.id });
+    let oneItinerary = await Itinerary.findOne({ _id: req.params.id }).populate(
+      "city_id"
+    );
     return res.status(200).json({
       success: true,
       message: "Itinerary found",
