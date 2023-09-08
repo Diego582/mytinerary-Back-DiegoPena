@@ -6,6 +6,6 @@ export default (req, res, next) => {
     req.body.password = hashPassword;
     return next();
   } catch (error) {
-    next(error);
+    return next(error);
   }
 };
