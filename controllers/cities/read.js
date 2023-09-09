@@ -2,7 +2,7 @@ import City from "../../models/City.js";
 
 export default async (req, res, next) => {
   try {
-    console.log(req.query.city);
+    
     let searchObject = {};
     if (req.query.city) {
       searchObject.city = new RegExp("^" + req.query.city, "i");
