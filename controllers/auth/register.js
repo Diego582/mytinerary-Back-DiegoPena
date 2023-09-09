@@ -9,6 +9,6 @@ export default async (req, res, next) => {
       response: one,
     });
   } catch (error) {
-    next(error);
+    return next(error);
   }
 };

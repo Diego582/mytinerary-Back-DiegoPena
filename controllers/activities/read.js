@@ -6,7 +6,7 @@ export default async (req, res, next) => {
     if (req.query.itinerary_id) {
       searchObject.itinerary_id = req.query.itinerary_id;
     }
-    console.log(searchObject);
+   
     let allActivities = await Activity.find(searchObject);
     return res.status(200).json({
       success: true,

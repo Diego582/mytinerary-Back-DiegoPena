@@ -2,12 +2,12 @@ import Itinerary from "../../models/Itinerary.js";
 
 export default async (req, res, next) => {
   try {
-    console.log(req.query.city_id);
+  
     let searchObject = {};
     if (req.query.city_id) {
       searchObject.city_id = req.query.city_id;
     }
-    console.log(searchObject);
+    
     let allItineraries = await Itinerary.find(searchObject).populate({
       path: "city_id",
       select: "country photo city description admin_id ",
